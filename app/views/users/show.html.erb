@@ -1,0 +1,9 @@
+<h1>USER PROFILE PAGE</h1>
+<p>first name: <%= @user.fname %></p>
+<p>last name: <%= @user.lname %></p>
+<p>email: <%= @user.email %></p>
+<p>pwd: <%= @user.password %></p>
+
+wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?
+
+<!-- not a loop bc it's USER, only 1 item!! -->

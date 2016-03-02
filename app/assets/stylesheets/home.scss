@@ -1,0 +1,130 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+@import url('http://fonts.googleapis.com/css?family=Lato');
+
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+  font-size: .9em;
+  line-height: 1.2;
+  box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1 {
+	font-family: "Lato";
+	font-size: 2.5em;
+	line-height: 1;
+}
+
+.flash {
+  padding: 1em;
+  border-radius: 4px;
+  width: 400px;
+}
+
+.notice {
+  border: 1px solid green;
+  background-color: #ccff99;
+}
+
+.alert {
+  border: 1px solid red;
+  background-color: #ff6666;
+}
+
+header {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  height: 12em;
+  border: 1px solid #ccc;
+}
+
+header h1 {
+  text-align: center;
+}
+
+nav {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  padding: 10px 0;
+  border: 1px solid #000;
+}
+
+nav ul {
+  list-style: none;
+  line-height: 1;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  float: right;
+  padding: 10px 0;
+  margin-right: -4px;
+  width: 120px;
+  text-align: center;
+  font-family: "Roboto";
+  font-size: 22px;
+}
+
+#homelink {
+  float: left;
+}
+
+nav a {
+  padding: 10px 20px;
+  margin: 0;
+  width: 120px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000;
+  font-size: .9em;
+  line-height: 1.2;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+nav a:hover {
+  background-color: #FF6B6B;
+  opacity: .8;
+  color: #000;
+  text-shadow:none;
+}
+
+
+#homecontainer {
+	margin: 0;
+	padding: 0;
+  	width: 100%;
+  	text-align: center;
+  	border: 1px solid #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

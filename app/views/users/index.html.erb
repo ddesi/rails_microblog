@@ -1,0 +1,9 @@
+<% @users.each do |u| %>
+	<h2>User</h2>
+	<p>First name: <%= u.fname %></p>
+	<p>Last name: <%= u.lname %></p>
+	<p>Email: <%= u.email %></p>
+	<p>Password: <%= u.password %></p><br>
+<% end %>
+
+<!-- make password only visible if user id and session id match -->

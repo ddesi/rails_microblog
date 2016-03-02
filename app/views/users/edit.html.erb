@@ -1,0 +1,5 @@
+<%= form_for @user do |f| %>
+	<%= f.text_field :fname, placeholder: "First name" %><br><br>
+	<%= f.text_field :lname, placeholder: "Last name" %><br><br>
+	<%= f.submit :update %>
+<% end %>
