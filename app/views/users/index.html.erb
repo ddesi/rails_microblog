@@ -1,9 +1,12 @@
 <% @users.each do |u| %>
-	<h2>User</h2>
+	<h2>Username: <%= u.username %> <%= link_to("click for profile", user_path(u.id), method: :get) %></h2>
+	<p>ID: <%= u.id %></p>
+	<p>Email: <%= u.email %></p>
+	<p>Password: <%= u.password %></p>
 	<p>First name: <%= u.fname %></p>
 	<p>Last name: <%= u.lname %></p>
-	<p>Email: <%= u.email %></p>
-	<p>Password: <%= u.password %></p><br>
+
+	wanna <%= link_to("DELETE", user_path(u.id), method: :delete) %> the user?<br><br>
 <% end %>
 
 <!-- make password only visible if user id and session id match -->

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 	end
 
 	def create
-		@user = User.new(params[:user])
+		@user = User.new(username: params[:user][:username], email: params[:user][:email], password: params[:user][:password])
 		if @user.save
 			flash[:notice] = "Your account was created successfully. Please log in!"
 			redirect_to new_session_path
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
 		@user.update(params[:user]) 
 		# it's automatically getting ALL the params for users from your table (fname, lname etc)
 
-		redirect_to :back
+		redirect_to user_path(@user.id)
 	end
 
 	def destroy
@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 	end
 
 	def profile
-		@user = User.find(params[:id])
+		@user = current_user
 	end
 
 end

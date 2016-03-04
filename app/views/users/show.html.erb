@@ -1,9 +1,11 @@
 <h1>USER PROFILE PAGE</h1>
-<p>first name: <%= @user.fname %></p>
-<p>last name: <%= @user.lname %></p>
+<p>username: <%= @user.username %></p>
 <p>email: <%= @user.email %></p>
 <p>pwd: <%= @user.password %></p>
+<p>last name: <%= @user.fname %></p>
+<p>last name: <%= @user.lname %></p>
 
-wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?
-
-<!-- not a loop bc it's USER, only 1 item!! -->
+<% if session[:user_id] && current_user.id == @user.id %>
+	<%= link_to("Wanna edit your profile?", edit_user_path(@user.id), method: :get) %><br>
+	wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?
+<% end %>

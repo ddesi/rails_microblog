@@ -4,9 +4,14 @@ class PostsController < ApplicationController
 	end
 
 	def create
+		@post = Post.where(user_id: current_user).create(params[:post])
+
+		# not working!! redirect_to user_path(params[:post][:user_id])
+		redirect_to posts_path
 	end
 
 	def new
+		@post = Post.new
 	end
 
 	def edit
@@ -26,7 +31,9 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		@post = Post.find(params[:id])
+		# @post = Post.find(params[:id])
+		@user = current_user
+  		@posts = @user.posts
 	end
 
 end

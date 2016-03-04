@@ -1,3 +1,29 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#postlist {
+	position: relative;
+  	width: 30em;
+  	text-align: justify;
+  	border-left: 3px solid black;
+  	border-right: 3px solid black;
+  	margin: 0 auto;
+  	padding: 1em;  
+}
+
+#postlist h1 {
+	text-align:center;
+	padding: 0.5em;
+}
+
+.flash {
+  position: relative;
+  width: 30em;	
+  padding: 1em;
+  border-radius: 4px;
+  margin: 0 auto;
+  padding: 1em;  
+}
+
