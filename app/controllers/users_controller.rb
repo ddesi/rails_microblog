@@ -54,11 +54,15 @@ class UsersController < ApplicationController
 			redirect_to "/"
 		else
 		@user = User.find(params[:id])
+		@post = Post.new
+		@posts = Post.where(user_id: params[:id])
 		end
 	end
 
 	def profile
 		@user = current_user
+		@post = Post.new
+		@posts = Post.where(user_id: current_user.id)
 	end
 
 end

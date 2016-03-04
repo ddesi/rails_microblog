@@ -15,9 +15,14 @@ class PostsController < ApplicationController
 	end
 
 	def edit
+		@post = Post.find(params[:id])
 	end
 
 	def update
+		@post = Post.find(params[:id])
+    	@post.update(params[:post])
+
+    	redirect_to user_path(@post.user_id)
 	end
 
 	def destroy
@@ -31,9 +36,9 @@ class PostsController < ApplicationController
 	end
 
 	def show
-		# @post = Post.find(params[:id])
-		@user = current_user
-  		@posts = @user.posts
+		@post = Post.find(params[:id])
+		# @user = current_user
+  		# @posts = @user.posts
 	end
 
 end

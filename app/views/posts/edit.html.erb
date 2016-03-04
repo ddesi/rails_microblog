@@ -1,0 +1,22 @@
+<!-- make is so you can only edit your own post??? -->
+<div>
+	<h1>Edit <%= @post.user.username %>'s Post:</h1>
+</div>
+
+<div>
+	<p>
+		<%= @post.body %>
+	</p>
+</div>
+
+<div>
+	<h2>Edits:</h2>
+
+	<%= form_for @post do |p| %>
+	  
+	  <%= p.text_area :body %>
+
+	  <%= p.submit :update %>
+
+	<% end %>
+</div>

@@ -1,11 +1,21 @@
-<h1>USER PROFILE PAGE</h1>
-<p>username: <%= @user.username %></p>
-<p>email: <%= @user.email %></p>
-<p>pwd: <%= @user.password %></p>
-<p>last name: <%= @user.fname %></p>
-<p>last name: <%= @user.lname %></p>
+<div>
+	<h1>USER PROFILE PAGE</h1>
+	<p>username: <%= @user.username %></p>
+	<p>email: <%= @user.email %></p>
+	<p>pwd: <%= @user.password %></p>
+	<p>last name: <%= @user.fname %></p>
+	<p>last name: <%= @user.lname %></p><br><br>
 
 <% if session[:user_id] && current_user.id == @user.id %>
 	<%= link_to("Wanna edit your profile?", edit_user_path(@user.id), method: :get) %><br>
-	wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?
+	wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?<br><br>
 <% end %>
+
+</div>
+
+<div>
+	<% @posts.each do |p| %>
+	<p>post title: <%= p.title %></p>
+	<p>content: <%= p.body %></p><br><br>
+	<% end %>
+</div>

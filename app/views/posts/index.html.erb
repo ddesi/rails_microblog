@@ -4,10 +4,14 @@
 
 	<% @posts.each do |p| %>
 	<h1>THIS IS A POST:</h1>
+	<h2><%= link_to("click for post", post_path(p.id), method: :get) %></h2>
 	<p>User id: <%= p.user_id %></p>
+	<p>Post user: <%= p.user.username %></p>
+	<h2><%= link_to("click for post", post_path(p.id), method: :get) %></h2>
+	<p>Post id: <%= p.id %></p>
 	<p>Title: <%= p.title %></p>
 	<p>Content: <%= p.body %><br><br></p>
-	wanna <%= link_to("DELETE", post_path(p.id), method: :delete) %> the post?
+	<p>wanna <%= link_to("DELETE", post_path(p.id), method: :delete) %> the post?</p><br>
 
 	<% end %>
 
