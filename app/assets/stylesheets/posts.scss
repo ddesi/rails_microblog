@@ -2,28 +2,190 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-
 #postlist {
-	position: relative;
-  	width: 30em;
-  	text-align: justify;
-  	border-left: 3px solid black;
-  	border-right: 3px solid black;
-  	margin: 0 auto;
-  	padding: 1em;  
-}
-
-#postlist h1 {
-	text-align:center;
-	padding: 0.5em;
-}
-
-.flash {
-  position: relative;
-  width: 30em;	
-  padding: 1em;
-  border-radius: 4px;
+  display: table;
+  margin: 0 auto;
+  width: 40em;
+  text-align: justify;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
   margin: 0 auto;
   padding: 1em;  
 }
+
+#postlist h1 {
+  text-align:center;
+}
+
+#post_in_list {
+  display: table;
+  margin: 0 auto;
+  width: 30em;
+  text-align: justify;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  padding: 1em;  
+}
+
+#post_outer {
+  position:relative;
+  width:100%;
+}
+
+#post {
+	display: table;
+  margin: 0 auto;
+	width: 30em;
+	text-align: justify;
+	border-left: 3px solid black;
+	border-bottom: 3px solid black;
+	margin: 0 auto;
+	padding: 1em;  
+}
+
+#post h1 {
+  text-align:center;
+}
+
+#new_post_outer {
+  position:relative;
+  width:100%;
+}
+
+#new_post {
+  display: table;
+  margin: 0 auto;
+  padding: 1em;
+  color: #000;
+  border: 1px solid black;
+}
+
+#comment_outer {
+  position:relative;
+  width:100%;
+}
+
+#comment {
+  display: table;
+  margin: 0 auto;
+  padding: 1em;
+  width:20em;
+  border: 1px solid black;
+  text-align:left;
+}
+
+#new_comment_outer {
+  position:relative;
+  width:100%;
+}
+
+#new_comment {
+  display: table;
+  margin: 0 auto;
+  padding: 1em;
+  width: 20em;
+  color: #000;
+}
+
+input {
+  display: table;
+  margin: 0 auto;
+  width: 20em;
+  padding: 1em;
+  line-height: 2;
+  border: 2px solid #000;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: border 0.3s;
+}
+
+input:focus {
+  border: 2px solid #FF6B6B;
+}
+
+input:hover {
+  color: #fff;
+  background: #4ECDC4;
+}
+
+.textarea {
+  display: table;
+  margin: 0 auto;
+  width: 20em;
+  padding: 1em;
+  line-height: 2;
+  border: 2px solid #000;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: border 0.3s;
+}
+
+.textarea:focus {
+  border: 2px solid #FF6B6B;
+}
+
+.textarea:hover {
+  color: #000;
+  background: #4ECDC4;
+}
+
+.btn {
+  display: table;
+  margin: 0 auto;
+  width: 22em;
+  padding: 1em;
+  background: #4ECDC4;
+  color: #000;
+  border: 3px solid #000;
+  text-align:center;
+  line-height: 2;
+  font-weight: bold;
+  letter-spacing: 1px;
+  -webkit-transition: 0.3s;
+  -moz-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.btn:hover,
+.btn:active {
+  color: #4ECDC4;
+  background: #fff;
+  cursor: pointer;
+}
+
+::-webkit-input-placeholder { 
+  color: #000;
+}
+::-moz-placeholder { 
+  color: #000;
+}
+:-ms-input-placeholder { 
+  color: #000;
+}
+:-moz-placeholder { 
+  color: #000;
+}
+
+:focus::-webkit-input-placeholder { 
+  color: #fff;
+}
+:focus::-moz-placeholder { 
+  color: #fff;
+}
+:focus:-ms-input-placeholder { 
+  color: #fff;
+}
+:focus:-moz-placeholder { 
+  color: #fff;
+}
+
+
 

@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
+  # you could also reroute to a specific page when u are in the home page
+  # root :to => "users#index"
+
   get "/" => "home#index"
   
   get "/search" => "home#search"
@@ -22,6 +25,7 @@ Rails.application.routes.draw do
   # get "/users/:id" => "users#show"
   resources :sessions
   resources :posts
+  resources :comments
 
 
 

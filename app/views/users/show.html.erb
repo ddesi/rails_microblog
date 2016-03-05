@@ -1,10 +1,11 @@
-<div>
-	<h1>USER PROFILE PAGE</h1>
-	<p>username: <%= @user.username %></p>
+<div id="profile">
+	<h1><%= @user.username %>'S PROFILE PAGE</h1>
+	<% if session[:user_id] && current_user.id == @user.id %>
 	<p>email: <%= @user.email %></p>
 	<p>pwd: <%= @user.password %></p>
+	<% end %>
 	<p>last name: <%= @user.fname %></p>
-	<p>last name: <%= @user.lname %></p><br><br>
+	<p>last name: <%= @user.lname %></p>
 
 <% if session[:user_id] && current_user.id == @user.id %>
 	<%= link_to("Wanna edit your profile?", edit_user_path(@user.id), method: :get) %><br>
@@ -13,9 +14,12 @@
 
 </div>
 
-<div>
+<div id="profile_postlist">
 	<% @posts.each do |p| %>
-	<p>post title: <%= p.title %></p>
-	<p>content: <%= p.body %></p><br><br>
+	<div id="profile_post">
+		<h1><%= p.title %></h1>
+		<p><%= p.body %></p>
+		<p align="right"><%= p.comments.count %> comments | <%= link_to("add a comment", post_path(p.id), method: :get) %></p>
+	</div>
 	<% end %>
 </div>

@@ -20,6 +20,11 @@ class UsersController < ApplicationController
 
 		# User.create(params[:user])
 		# redirect_to new_user_path
+
+		# you can specify which body if you have the same for e.g. comments and posts
+		# params[:post][:body]
+		# params[:comment][:body]
+		# in the html it's post[body]
 	end
 
 	def new
@@ -28,6 +33,8 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		# has the same code as the show bc they both need to load the info first with the get
+		# then you update it with update with a post
 	end
 
 	def update

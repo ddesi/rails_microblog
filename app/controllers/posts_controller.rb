@@ -6,7 +6,7 @@ class PostsController < ApplicationController
 	def create
 		@post = Post.where(user_id: current_user).create(params[:post])
 
-		# not working!! redirect_to user_path(params[:post][:user_id])
+		# not working>> redirect_to user_path(params[:post][:user_id])
 		redirect_to posts_path
 	end
 
@@ -37,8 +37,12 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
-		# @user = current_user
+		@user = @post.user
   		# @posts = @user.posts
+  		# im saying find the post in the db and for that post get all the comments of that post
+  		@comment = Comment.new
+  		@comments = @post.comments
 	end
 
 end
+

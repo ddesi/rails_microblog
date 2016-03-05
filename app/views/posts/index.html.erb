@@ -1,18 +1,16 @@
 <div id="postlist">
 
-	<p>Create a new post <a href="/posts/new">HERE</a></p>
+	<p><a class="btn" href="/posts/new">CREATE A NEW POST HERE</a></p>
 
-	<% @posts.each do |p| %>
-	<h1>THIS IS A POST:</h1>
-	<h2><%= link_to("click for post", post_path(p.id), method: :get) %></h2>
-	<p>User id: <%= p.user_id %></p>
-	<p>Post user: <%= p.user.username %></p>
-	<h2><%= link_to("click for post", post_path(p.id), method: :get) %></h2>
-	<p>Post id: <%= p.id %></p>
-	<p>Title: <%= p.title %></p>
-	<p>Content: <%= p.body %><br><br></p>
-	<p>wanna <%= link_to("DELETE", post_path(p.id), method: :delete) %> the post?</p><br>
-
+	<% @posts.reverse.each do |p| %>
+	<div id="post_in_list">
+		<h1><%= link_to(p.title, post_path(p.id), method: :get) %></h1>
+		<!-- <p>User id: <%= p.user_id %></p> -->
+		<p>By: <%= p.user.username %></p>
+		<p>Content: <%= p.body %></p>
+		<p align="right"><%= p.comments.count %> comments | <%= link_to("add a comment", post_path(p.id), method: :get) %></p>
+		<!-- <p><%= link_to("DELETE", post_path(p.id), method: :delete) %> the post</p> --><br>
+	</div>
 	<% end %>
 
 </div>

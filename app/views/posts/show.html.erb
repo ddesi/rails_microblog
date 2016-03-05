@@ -1,5 +1,26 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.body %></p>
+<div id="post">
+	<h1><%= @post.title %></h1>
+	<p><%= @post.body %></p>
 
-wanna <%= link_to("DELETE", post_path(params[:id]), method: :delete) %> the post?
+	wanna <%= link_to("DELETE", post_path(params[:id]), method: :delete) %> the post?
+</div>
 
+<div id="comment_outer">
+	<p>comments:</p>
+	<div id="comment">
+		<% @comments.reverse.each do |c| %>
+
+			<p><%= c.body %></p>
+
+			<p align="right"><%= link_to("DELETE", comment_path(params[:id]), method: :delete) %></p>
+		<% end %>
+	</div>
+</div>
+
+<div id="new_comment_outer">
+		<%= form_for @comment do |c| %>
+		<%= c.hidden_field :post_id, value: @post.id %>
+		<%= c.text_area :body, placeholder: "Comment here", class: "textarea" %><br>
+		<%= c.submit :create, value: "comment", class: "btn"  %>
+		<% end %>
+</div>
