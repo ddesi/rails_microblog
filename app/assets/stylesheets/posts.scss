@@ -2,6 +2,14 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a {
+  text-decoration:none;
+}
+
+img {
+  max-width:300px;
+}
+
 #postlist {
   display: table;
   margin: 0 auto;
@@ -94,6 +102,22 @@ input {
   padding: 1em;
   line-height: 2;
   border: 2px solid #000;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: border 0.3s;
+}
+
+#user_username, #user_email, #user_password, #user_fname, #user_lname {
+  display: block;
+  margin: 1em 0;
+  width: 12em;
+  padding: 1em;
+  line-height: 2;
+  border-right: 2px solid #000;
   outline: none;
   border-radius: 0;
   box-shadow: none;

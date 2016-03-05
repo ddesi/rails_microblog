@@ -1,8 +1,10 @@
 <div id="post">
 	<h1><%= @post.title %></h1>
+	<p align="center">by: <%= @post.user.username %></p>
 	<p><%= @post.body %></p>
 
-	wanna <%= link_to("DELETE", post_path(params[:id]), method: :delete) %> the post?
+	<p class="btn"><%= link_to("EDIT POST", post_path(params[:id]), method: :edit) %></p>
+	<p class="btn"><%= link_to("DELETE POST", post_path(params[:id]), method: :delete) %></p>
 </div>
 
 <div id="comment_outer">
@@ -12,7 +14,7 @@
 
 			<p><%= c.body %></p>
 
-			<p align="right"><%= link_to("DELETE", comment_path(params[:id]), method: :delete) %></p>
+			<p align="right"><%= link_to("DELETE", comment_path(c.id), method: :delete) %></p>
 		<% end %>
 	</div>
 </div>

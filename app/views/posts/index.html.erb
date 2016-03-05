@@ -6,8 +6,7 @@
 	<div id="post_in_list">
 		<h1><%= link_to(p.title, post_path(p.id), method: :get) %></h1>
 		<!-- <p>User id: <%= p.user_id %></p> -->
-		<p>By: <%= p.user.username %></p>
-		<p>Content: <%= p.body %></p>
+		<p><%= p.body %></p>
 		<p align="right"><%= p.comments.count %> comments | <%= link_to("add a comment", post_path(p.id), method: :get) %></p>
 		<!-- <p><%= link_to("DELETE", post_path(p.id), method: :delete) %> the post</p> --><br>
 	</div>

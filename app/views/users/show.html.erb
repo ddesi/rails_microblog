@@ -4,7 +4,7 @@
 	<p>email: <%= @user.email %></p>
 	<p>pwd: <%= @user.password %></p>
 	<% end %>
-	<p>last name: <%= @user.fname %></p>
+	<p>first name: <%= @user.fname %></p>
 	<p>last name: <%= @user.lname %></p>
 
 <% if session[:user_id] && current_user.id == @user.id %>
@@ -17,7 +17,7 @@
 <div id="profile_postlist">
 	<% @posts.each do |p| %>
 	<div id="profile_post">
-		<h1><%= p.title %></h1>
+		<h1 align="center"><%= link_to(p.title, post_path(p.id), method: :get) %></h1>
 		<p><%= p.body %></p>
 		<p align="right"><%= p.comments.count %> comments | <%= link_to("add a comment", post_path(p.id), method: :get) %></p>
 	</div>

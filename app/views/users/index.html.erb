@@ -1,11 +1,16 @@
-<% @users.each do |u| %>
-	<h2>Username: <%= u.username %> <%= link_to("click for profile", user_path(u.id), method: :get) %></h2>
-	<p>ID: <%= u.id %></p>
-	<p>Email: <%= u.email %></p>
-	<p>First name: <%= u.fname %></p>
-	<p>Last name: <%= u.lname %></p>
+<div id="profile">
+	<h1>COOL USERS</h1>
+	<% @users.each do |u| %>
+	<div id="post_in_list">
+		<h2><%= u.username %></h2>
+		<p id="profile_link"><%= link_to("click to view profile", user_path(u.id), method: :get) %></p>
+		<p>Email: <%= u.email %></p>
+		<p>PICTURE ON THE SIDE</p>
+		<!-- right now anyone can delete profiles, but i could add: -->
+		<!-- if session[:user_id] && u.id == current_user.id -->
+		<p id="profile_link"><%= link_to("DELETE PROFILE", user_path(u.id), method: :delete) %></p>
+	</div>
+	<% end %>
+</div>
 
-	wanna <%= link_to("DELETE", user_path(u.id), method: :delete) %> the user?<br><br>
-<% end %>
 
-<!-- make password only visible if user id and session id match -->

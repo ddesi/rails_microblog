@@ -1,16 +1,23 @@
-<div>
-	<h1>USER PROFILE PAGE</h1>
-	<p>username: <%= @user.username %></p>
-	<p>email: <%= @user.email %></p>
-	<p>pwd: <%= @user.password %></p>
-	<p>last name: <%= @user.fname %></p>
-	<p>last name: <%= @user.lname %></p><br><br>
+<div id="profile">
+	<h1>YOUR PROFILE PAGE</h1>
+	<div id="profile_left">
+		<%= form_tag("/profile", method: "get") do %>
+		<%= text_field "user", "username", placeholder: "username not entered", readonly: true %>
+		<%= email_field "user", "email", placeholder: "email not entered", readonly: true %>
+		<%= text_field "user", "password", placeholder: "password not entered", readonly: true %>
+		<%= text_field "user", "fname", placeholder: "first name not entered", readonly: true %>
+		<%= text_field "user", "lname", placeholder: "last name not entered", readonly: true %>
+		<% end %>
+	</div>
 
-<% if session[:user_id] && current_user.id == @user.id %>
-	<%= link_to("Wanna edit your profile?", edit_user_path(@user.id), method: :get) %><br>
-	wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?<br><br>
-<% end %>
+	<div id="profile_right">
+		<p align="center">PIC</p>
+		<p align="center">WILL GO</p>
+		<p align="center">HERE</p>
 
+		<p class="btn"><%= link_to("EDIT PROFILE", edit_user_path(@user.id), method: :get) %></p><br>
+		<p class="btn"><%= link_to("DELETE PROFILE", user_path(@user.id), method: :delete) %></p>
+	</div>
 </div>
 
 <div>

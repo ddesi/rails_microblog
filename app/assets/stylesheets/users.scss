@@ -2,6 +2,17 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+a {
+  text-decoration:none;
+  color: #000;
+}
+
+#profile_link a {
+	text-decoration:none;
+  	color: #4ECDC4;
+  	font-weight: bold;
+}
+
 #profile {
 	display: table;
   	margin: 0 auto;
@@ -18,6 +29,10 @@
   width:90%;
 }
 
+#profile_post h1 a {
+	color: #4ECDC4;
+}
+
 #profile_post {
 	display: inline-block;
   	margin: 0 auto;
@@ -26,4 +41,15 @@
 	text-align: justify;
 	border-bottom: 2px solid black;
 	border-right: 2px solid black;
+}
+
+#profile_left {
+	float:left;
+}
+
+#profile_right {
+	float:right;
+	margin:0 auto;
+	padding:1em;
+	width:50%;
 }
