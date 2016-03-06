@@ -5,8 +5,7 @@ class PostsController < ApplicationController
 
 	def create
 		@post = Post.where(user_id: current_user).create(params[:post])
-
-		# not working>> redirect_to user_path(params[:post][:user_id])
+		@post.user_id = current_user
 		redirect_to posts_path
 	end
 
@@ -21,8 +20,10 @@ class PostsController < ApplicationController
 	def update
 		@post = Post.find(params[:id])
     	@post.update(params[:post])
+    	@user = @post.user
 
-    	redirect_to user_path(@post.user_id)
+    	redirect_to posts_path
+    	# or also to user_path(@post.user_id)
 	end
 
 	def destroy
@@ -32,7 +33,7 @@ class PostsController < ApplicationController
 		else
 			flash[:alert] = "there was a problem"
 		end
-		redirect_to posts_path
+		redirect_to :back
 	end
 
 	def show
@@ -42,6 +43,11 @@ class PostsController < ApplicationController
   		# im saying find the post in the db and for that post get all the comments of that post
   		@comment = Comment.new
   		@comments = @post.comments
+	end
+
+	private
+	def post_params
+		params.require(:post).permit(:body, :user_id, :title)
 	end
 
 end

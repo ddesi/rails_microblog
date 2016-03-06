@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
 			redirect_to user_path @user
 		else
 			flash[:alert] = "There was a problem with the login. Please try again"
-			redirect_to sessions_path
+			redirect_to :back
 		end
 	end
 

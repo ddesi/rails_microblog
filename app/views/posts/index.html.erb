@@ -8,7 +8,13 @@
 		<!-- <p>User id: <%= p.user_id %></p> -->
 		<p><%= p.body %></p>
 		<p align="right"><%= p.comments.count %> comments | <%= link_to("add a comment", post_path(p.id), method: :get) %></p>
-		<!-- <p><%= link_to("DELETE", post_path(p.id), method: :delete) %> the post</p> --><br>
+		<% if session[:user_id] && p.user_id == current_user.id %>
+
+  		<p class="btn"><%= link_to("EDIT POST", edit_post_path(p.id), method: :get) %></p>
+
+  		<p class="btn"><%= link_to("DELETE POST", post_path(p.id), method: :delete) %></p>
+		<% end %>
+
 	</div>
 	<% end %>
 

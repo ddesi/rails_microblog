@@ -2,9 +2,10 @@
 	<h1><%= @post.title %></h1>
 	<p align="center">by: <%= @post.user.username %></p>
 	<p><%= @post.body %></p>
-
-	<p class="btn"><%= link_to("EDIT POST", post_path(params[:id]), method: :edit) %></p>
-	<p class="btn"><%= link_to("DELETE POST", post_path(params[:id]), method: :delete) %></p>
+	<% if session[:user_id] && @post.user_id == current_user.id %>
+		<p class="btn"><%= link_to("EDIT POST", post_path(params[:id]), method: :edit) %></p>
+		<p class="btn"><%= link_to("DELETE POST", post_path(params[:id]), method: :delete) %></p>
+	<% end %>
 </div>
 
 <div id="comment_outer">
@@ -13,8 +14,8 @@
 		<% @comments.reverse.each do |c| %>
 
 			<p><%= c.body %></p>
-
 			<p align="right"><%= link_to("DELETE", comment_path(c.id), method: :delete) %></p>
+			
 		<% end %>
 	</div>
 </div>

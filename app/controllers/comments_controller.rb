@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
 	def create
+		puts params.inspect
 		@comment = Comment.create(params[:comment])
 		# >> bc you have post id user id
 		@post = @comment.post

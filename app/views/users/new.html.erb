@@ -1,10 +1,11 @@
-<h1>Join us!</h1>
-<h1>Sign up to start your incredible adventure</h1><br>
-<%= form_for @user do |f| %>
-	<%= f.text_field :username, placeholder: "Choose your username" %><br><br>
-	<%= f.email_field :email, placeholder: "Type your email address" %><br><br>
-	<%= f.password_field :password, placeholder: "Choose a password" %><br><br>
-	<%= f.submit :submit %>
-<% end %>
-
+<div id ="profile">
+	<h1 align="center">Join us!</h1>
+	<h1 align="center">Sign up to start your incredible adventure</h1><br>
+	<%= form_for @user do |f| %>
+		<%= f.text_field :username, placeholder: "Choose your username" %><br><br>
+		<%= f.email_field :email, placeholder: "Type your email address" %><br><br>
+		<%= f.password_field :password, placeholder: "Choose a password" %><br><br>
+		<%= f.submit :submit %>
+	<% end %>
+</div>
 <!-- text fields for fname and lname moved to edit profile page -->

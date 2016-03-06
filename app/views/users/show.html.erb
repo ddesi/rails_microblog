@@ -8,8 +8,8 @@
 	<p>last name: <%= @user.lname %></p>
 
 <% if session[:user_id] && current_user.id == @user.id %>
-	<%= link_to("Wanna edit your profile?", edit_user_path(@user.id), method: :get) %><br>
-	wanna <%= link_to("DELETE", user_path(@user.id), method: :delete) %> your profile?<br><br>
+	<p class="btn"><%= link_to("EDIT PROFILE", edit_user_path(@user.id), method: :get) %></p>
+	<p class="btn"><%= link_to("DELETE PROFILE", user_path(@user.id), method: :delete) %></p>
 <% end %>
 
 </div>

@@ -1,7 +1,9 @@
-<%= form_tag("/login", method: :post) do %>
-<%= label_tag(:email) %>
-<%= email_field_tag 'user[email]' %>
-<%= label_tag(:password) %>
-<%= password_field_tag 'user[password]' %>
-<%= submit_tag("Submit") %>
-<% end %>
+<div id ="profile">
+	<%= form_tag("/login", method: :post) do %>
+	<%= label_tag(:email) %>
+	<%= email_field_tag 'user[email]', nil, class: 'login_user' %>
+	<%= label_tag(:password) %>
+	<%= password_field_tag 'user[password]', nil, class: 'login_user' %>
+	<%= submit_tag 'Submit', class: 'login_user' %>
+	<% end %>
+</div>

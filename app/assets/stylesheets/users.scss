@@ -15,7 +15,7 @@ a {
 
 #profile {
 	display: table;
-  	margin: 0 auto;
+  margin: 0 auto;
 	width: 50em;
 	text-align: justify;
 	border: 3px solid black;
@@ -35,8 +35,8 @@ a {
 
 #profile_post {
 	display: inline-block;
-  	margin: 0 auto;
-  	padding: 1em;  
+  margin: 0 auto;
+  padding: 1em;  
 	width: 20em;
 	text-align: justify;
 	border-bottom: 2px solid black;
@@ -52,4 +52,79 @@ a {
 	margin:0 auto;
 	padding:1em;
 	width:50%;
+}
+
+#user_username, #user_email, #user_password {
+  display: block;
+  margin: 0 auto;
+  width: 12em;
+  padding: 1em;
+  line-height: 2;
+  border-right: 2px solid #000;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: border 0.3s;
+}
+
+#user_fname, #user_lname {
+	display: block;
+  	margin: 0 auto;
+  	width: 18em;
+}
+
+#user_fname:focus, #user_lname:focus {
+	border: 2px solid #000;
+}
+#user_fname:hover, #user_lname:hover {
+	background-color: #fff;
+}
+
+#user_username, #user_email, #user_password {
+	display: block;
+  	margin: 0 auto;
+  	width: 18em;
+  	padding: 1em;
+  	line-height: 2;
+  	border: 2px solid #000;
+  	outline: none;
+  	border-radius: 0;
+  	box-shadow: none;
+  	background-color: #fff;
+  	color: #000;
+  	font-weight: bold;
+  	transition: border 0.3s;
+}
+
+label {
+  display: inline;
+  margin: 1em 0;
+  width: 14em!important;
+  padding: 1em;
+  line-height: 2;
+  outline: none;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: #fff;
+  color: #000;
+  font-weight: bold;
+  transition: border 0.3s;
+}
+
+.login_user {
+	display: inline!important;
+  	margin: 1em!important;
+  	width: 12em!important;
+  	padding: 1em!important;
+  	line-height: 2!important;
+  	outline: none!important;
+  	border-radius: 0!important;
+  	box-shadow: none!important;
+  	background-color: #fff!important;
+  	color: #000!important;
+  	font-weight: bold!important;
+  	transition: border 0.3s!important;
 }

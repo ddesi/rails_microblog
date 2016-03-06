@@ -20,9 +20,13 @@
 	</div>
 </div>
 
-<div>
+<div id="profile_postlist">
+	<p><a class="btn" href="/posts/new">CREATE NEW POST</a></p>
 	<% @posts.each do |p| %>
-	<p>post title: <%= p.title %></p>
-	<p>content: <%= p.body %></p><br><br>
+	<div id="profile_post">
+		<h1 align="center"><%= link_to(p.title, post_path(p.id), method: :get) %></h1>
+		<p><%= p.body %></p>
+		<p align="right"><%= p.comments.count %> comments | <%= link_to("add a comment", post_path(p.id), method: :get) %></p>
+	</div>
 	<% end %>
 </div>
